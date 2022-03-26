@@ -17,9 +17,9 @@ render = (x) => {
     newGrid.appendChild(square.cloneNode(true));
   }
   
-  let squares = document.getElementsByClassName('square');
+  let squares = document.querySelectorAll('.square');
   
-  Array.from(squares).forEach(s => {
+  squares.forEach(s => {
     s.addEventListener('mouseover', e => {
       s.classList.add('hovered');
     })
