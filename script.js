@@ -10,6 +10,13 @@ square.className = 'square'
 
 let x = 16
 
+randomRGB = () => {
+  let r = Math.floor(Math.random() * 256)
+  let g = Math.floor(Math.random() * 256)
+  let b = Math.floor(Math.random() * 256)
+  return [r, g, b]
+}
+
 render = (x) => {
   let newGrid = grid.cloneNode(true)
   screen.appendChild(newGrid)
@@ -20,8 +27,9 @@ render = (x) => {
   let squares = document.querySelectorAll('.square')
   
   squares.forEach(s => {
-    s.addEventListener('mouseover', e => {
+    s.addEventListener('mouseover', () => {
       s.classList.add('hovered')
+      s.style.backgroundColor = `rgb(${randomRGB()})`
     })
     s.style.width = `${800/x}px`
     s.style.height = `${800/x}px`
@@ -35,7 +43,6 @@ clear.onclick = () => {
   x = parseInt(x)
   if(x > 100) {x = 100}
   
-
   document.getElementById('grid').remove()
 
   let squares = document.querySelectorAll('.square')
