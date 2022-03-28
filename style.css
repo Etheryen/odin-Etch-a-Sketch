@@ -17,8 +17,9 @@ body {
 
 #grid {
   display: flex;
-  width: 800px;
+  width: 801px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 button {
